@@ -12,6 +12,8 @@ from tensorflow.examples.tutorials.mnist import input_data
 
 
 #构建Xavier初始化器
+#Xavier初始化器能够让权重被初始化得不大不小、正好合适。
+#从数学的角度分析，Xavier就是让权重满足0均值，同时方差为2/(n_in+n_out)，分布可以均匀分布或高斯分布
 def xavier_init(fan_in,fan_out,constant=1):
     low = - constant * np.sqrt(6.0/(fan_in+fan_out))
     high =  constant * np.sqrt(6.0/(fan_in+fan_out))
